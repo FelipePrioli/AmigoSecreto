@@ -22,7 +22,7 @@ function sortear(){
     shuffleArray(lista);
     let sorteio = document.getElementById('lista-sorteio');
 
-    if(lista.length > 4 ){
+    if(lista.length >= 4 ){
         for(let i = 0; i < lista.length; i++){
 
             if(i == lista.length - 1){
