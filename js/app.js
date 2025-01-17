@@ -14,7 +14,16 @@ function adicionar(){
 function sortear(){
     shuffleArray(lista);
     let sorteio = document.getElementById('lista-sorteio');
-    document.getElementById('lista-sorteio').innerHTML = lista
+
+    for(let i = 0; i < lista.length; i++){
+
+        if(i == lista.length - 1){
+            sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[0] + '<br>'
+        }else{
+            sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[i + 1] + '<br>'
+        }
+        
+    }
 }
 
 function shuffleArray(arr) {
