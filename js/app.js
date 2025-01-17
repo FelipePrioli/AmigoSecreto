@@ -27,7 +27,6 @@ function shuffleArray(arr) {
 }
 }
 
-
 function reiniciar(){
     window.location.reload()
 }
