@@ -5,9 +5,16 @@ function adicionar(){
     //pegar os elementos e adicionar os mesmos ao html.
     let nomeDoAmigo = document.getElementById('nome-amigo').value;
     let listaDeamigos = document.getElementById('lista-amigos')
-    lista.push(nomeDoAmigo)
-    document.getElementById('lista-amigos').innerHTML = lista 
-    
+    if(nomeDoAmigo == ''){
+        alert('Coloque um nome')
+    }
+    else if(lista.includes(nomeDoAmigo)){
+        alert('Adicione um nome diferente') 
+        
+    }else{
+        lista.push(nomeDoAmigo)
+        document.getElementById('lista-amigos').innerHTML = lista 
+    }   
 }
 
 
@@ -15,15 +22,20 @@ function sortear(){
     shuffleArray(lista);
     let sorteio = document.getElementById('lista-sorteio');
 
-    for(let i = 0; i < lista.length; i++){
+    if(lista.length > 4 ){
+        for(let i = 0; i < lista.length; i++){
 
-        if(i == lista.length - 1){
-            sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[0] + '<br>'
-        }else{
-            sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[i + 1] + '<br>'
+            if(i == lista.length - 1){
+                sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[0] + '<br>'
+            }else{
+                sorteio.innerHTML = sorteio.innerHTML + lista[i] + '-->' + lista[i + 1] + '<br>'
+            }
+            
         }
-        
+    }else{
+        alert('Adicione mais de 4 jogadores')
     }
+    
 }
 
 function shuffleArray(arr) {
